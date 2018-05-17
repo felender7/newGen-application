@@ -1,6 +1,8 @@
 class ComposeMessagesController < ApplicationController
   before_action :set_compose_message, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :current_user_compose_message, only:[:show]
   # GET /compose_messages
   # GET /compose_messages.json
   def index
@@ -14,7 +16,7 @@ class ComposeMessagesController < ApplicationController
 
   # GET /compose_messages/new
   def new
-    @compose_message = ComposeMessage.new
+    @compose_message = current_user.compose_messages.build
   end
   # GET /compose_messages/1/edit
   def edit
@@ -23,7 +25,7 @@ class ComposeMessagesController < ApplicationController
   # POST /compose_messages
   # POST /compose_messages.json
   def create
-    @compose_message = ComposeMessage.new(compose_message_params)
+    @compose_message =  current_user.compose_messages.build(compose_message_params)
 
     respond_to do |format|
       if @compose_message.save
@@ -70,4 +72,17 @@ class ComposeMessagesController < ApplicationController
     def compose_message_params
       params.require(:compose_message).permit(:recipient, :message)
     end
+end
+
+
+def correct_user # check if the user is authorised to edit,update or destroy the pin
+  @compose_message = current_user.compose_messages .find_by(id: params[:id])
+  redirect_to compose_messages_path, notice: "Not authorised to edit this pin" if @compose_message.nil?
+end
+
+
+def current_user_compose_message
+  if user_signed_in?
+   @compose_messages = current_user.compose_messages.order("created_at DESC")
+  end
 end

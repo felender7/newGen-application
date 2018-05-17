@@ -20,5 +20,9 @@
 $(function(){
       //hide alert after 5 second
       $('.alert').delay( 5000 ).fadeOut( 1000 );
+      // Closes responsive menu when a scroll trigger link is clicked
+      $('.js-scroll-trigger').click(function() {
+        $('.navbar-collapse').collapse('hide');
+      });
 
 });

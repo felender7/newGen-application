@@ -13,11 +13,13 @@
     </div>
   </div>
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
+   <%if current_user && @compose_message.user == current_user%>
       <strong>To:</strong> | <%= @compose_message.recipient %>
     <hr>
     <p>
       <%= @compose_message.message %>
     </p>
     <small style="color:grey">Sent: <%=@compose_message.created_at.to_time%></small>
+    <%end%>
   </div>
 </div>
