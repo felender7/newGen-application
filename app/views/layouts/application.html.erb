@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NewGen Application</title>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="fixed-nav sticky-footer" id="page-top">
+
+  <%=render'templates/header'%>
+    <div class="container">
+
+    <%flash.each do |name,msg|  %>
+      <%=content_tag(:div,msg , class:"alert alert-warning alert-dismissiblefade show", :role => "alert") %>
+       <%end%>
+          <%if user_signed_in?%>
+       <%=render'templates/search'%>
+     <%end%>
+      </div>
+
+    <%= yield %>
+
+    <%=render'templates/footer'%>
+
+  </body>
+</html>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $('.carousel').carousel({
+        interval: 5000
+        })
+
+        $(function () {
+            $('a.page-scroll').bind('click', function (event) {
+                var $anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top
+                }, 1500, 'easeInOutExpo');
+                event.preventDefault();
+            });
+        });
+
+</script>

@@ -1,0 +1,2 @@
+class ComposeMessage < ApplicationRecord
+end

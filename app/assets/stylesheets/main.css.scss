@@ -1,0 +1,73 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "font-awesome";
+
+$primary-color  :#ffc107;
+a:link {text-decoration: none;}
+a:visited {  text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
+.bg-danger{color:#fff}
+.bg-primary {background-color: $primary-color !important;}
+section#about {padding: 10px;}
+section {
+    padding: 8rem 0;
+}
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: asset-url("header.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+header.masthead hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+header.masthead p {
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header.masthead h1 {
+    font-size: 4rem;
+  }
+}
+
+.masthead hr {
+  max-width: 50px;
+  border-width: 3px;
+  border-color: #d39e00;
+}
+
+.masthead hr.light {
+  border-color: #fff;
+}

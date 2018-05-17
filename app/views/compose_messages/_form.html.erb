@@ -1,0 +1,38 @@
+<div class="shadow-sm p-3 mb-5 bg-white rounded">
+  <%= form_with(model: compose_message, local: true) do |form| %>
+    <% if compose_message.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(compose_message.errors.count, "error") %> prohibited this compose_message from being saved:</h2>
+
+        <ul>
+        <% compose_message.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+
+
+      <%= form.collection_select :recipient, Contact.all, :full_name , :phone , {prompt: "Select a Recipient"}, {class: "form-control"}  %>
+    </div>
+    <hr>
+    <div class="form-group form-check">
+       <input type="checkbox" class="form-check-input" id="exampleCheck1">
+       <label class="form-check-label" for="exampleCheck1">Send to all</label>
+    </div>
+    <hr>
+    <div class="form-group">
+
+      <%= form.text_area :message, id: :compose_message_message, class:"form-control", placeholder:"message" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.button class:"btn btn-primary", data:{disable_with:"<i class='fa fa-spinner fa-spin'></i> Sending please wait..."} do %>
+        Send Message
+        <%end%>
+    </div>
+  <% end %>
+
+</div>
