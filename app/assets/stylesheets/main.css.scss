@@ -3,6 +3,7 @@
 @import "font-awesome";
 
 $primary-color  :#ffc107;
+body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat;}
 a:link {text-decoration: none;}
 a:visited {  text-decoration: none;}
 a:hover {text-decoration: none;}
