@@ -14,6 +14,15 @@ section#about {padding: 10px;}
 section {
     padding: 8rem 0;
 }
+.parallex-bg-about {
+    color: $primary-color ;
+    font-size: 100%;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    position: relative;
+    background: asset-url('numbers-background.jpg') repeat fixed;
+}
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
