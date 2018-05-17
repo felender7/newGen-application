@@ -13,10 +13,7 @@
     <% end %>
 
     <div class="form-group">
-
-
-      <%= form.collection_select :recipient, Contact.all, :full_name , :phone , {prompt: "Select a Recipient"}, {class: "form-control"}  %>
-    </div>
+      <%= form.collection_select :recipient, current_user.contacts, :full_name , :full_name , {prompt: "Select a Recipient"}, {class: "form-control"}  %>
     <hr>
     <div class="form-group form-check">
        <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
           has_many :compose_messages, dependent: :destroy
+          has_many :contacts, dependent: :destroy
 end

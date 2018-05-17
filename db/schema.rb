@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180517011705) do
+ActiveRecord::Schema.define(version: 20180517013915) do
 
   create_table "compose_messages", force: :cascade do |t|
     t.string "recipient"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180517011705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "full_name"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -77,7 +77,7 @@ end
 
 def correct_user # check if the user is authorised to edit,update or destroy the pin
   @compose_message = current_user.compose_messages .find_by(id: params[:id])
-  redirect_to compose_messages_path, notice: "Not authorised to edit this pin" if @compose_message.nil?
+  redirect_to compose_messages_path, notice: "Not authorised" if @compose_message.nil?
 end
 
 
