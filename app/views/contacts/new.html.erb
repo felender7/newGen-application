@@ -6,6 +6,32 @@
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
     <%= render 'form', contact: @contact %>
     <hr>
+
+    <h3>Import contact - CVS </h3>
+   <div class="form-group">
+      <form class="md-form">
+      <div class="file-field">
+          <div class="btn btn-primary btn-sm float-left">
+              <span>Choose file</span>
+              <input type="file">
+          </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="actions">
+
+
+      <button class="btn btn-danger">
+        <i class="fa fa-save"></i> Save
+      </button>
+</form>
+<br>
+<br>
+<br>
+
     <%= link_to contacts_path do %>
     <i class="fa fa-2x fa-arrow-circle-left" data-toggle="tooltip" title="Back"></i>
      <%end%>

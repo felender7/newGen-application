@@ -5,11 +5,17 @@
         <div class="col-lg-10 mx-auto">
           <h1 class="text-uppercase">
             <strong>Get your message accross!</strong>
+
           </h1>
+          <h3> only from R49<small>pm</small></h3>
           <hr>
         </div>
         <div class="col-lg-8 mx-auto">
-          <p class="text-faded mb-5">Internet based SMS Messaging solution. We are leading SMS messaging service provider offering two-way SMS communication services straight from your internet enabled computer.</p>
+          <div id="autoplay">
+            <p class="text-faded mb-5">Internet based SMS Messaging solution. We are leading SMS messaging service provider offering two-way SMS communication services straight from your internet enabled computer.</p>
+            <p class="text-faded mb-5">Use bulk SMS’s to communicate to multiple contacts using our safe and easy to use interactive SMS Gateway</p>
+          </div>
+          <br>
           <a class="btn btn-warning btn-xl js-scroll-trigger" href="#about">Find Out More</a>
 
         </div>
@@ -86,3 +92,12 @@
   </section>
   <%=render'parallex_bg'%>
   <%=render'contacts'%>
+
+  <script type="text/javascript">
+$('#autoplay').textition({
+   speed: 1,
+   animation: 'ease-out',
+   map: {x: 200, y: 100, z: 0},
+   autoplay: true, interval: 5.5
+  })
+</script>
