@@ -1,0 +1,53 @@
+
+<body class="bg-dark channels">
+  <div class="container">
+    <div class="row justify-content-lg-center marging-100">
+      <div class="col col-lg-6 text-center">
+        <h3>READY TO GET STARTED?</h3>
+        Get Your Message Across any Channel, Device and Location Worldwide
+      </div>
+    </div>
+    <br>
+    <div class="card card-register mx-auto ">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+        <%= form_with(model: request_form, local: true) do |form| %>
+          <% if request_form.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(request_form.errors.count, "error") %> prohibited this request_form from being saved:</h2>
+
+              <ul>
+              <% request_form.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name, id: :request_form_first_name, class:'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name, id: :request_form_last_name, class:'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :phone %>
+            <%= form.text_field :phone, id: :request_form_phone, class:'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :email %>
+            <%= form.text_field :email, id: :request_form_email, class:'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.button'Send',class:"btn-lg btn-warning btn-block", data:{disable_with:'<i class="fa fa-spinner fa-spin"></i> Sending...'}%>
+          </div>
+        <% end %>
+    </div>
+    <br>
+  </div>

@@ -2,19 +2,32 @@
 @import "bootstrap";
 @import "font-awesome";
 
-$primary-color  :#ffc107;
+$primary-color      :#f58435;
+$secondary-color    :#f58435;
 body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat;}
 
+.btn-warning {
+    color: #212529;
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
 
+
+.btn-outline-warning {
+    color: #ffc107;
+    background-color: transparent;
+    background-image: none;
+    border-color: $primary-color;
+}
 .file-field.medium .file-path-wrapper {
-  height: 3rem; }
-  .file-field.medium .file-path-wrapper .file-path {
-    height: 2.8rem; }
+height: 3rem; }
+.file-field.medium .file-path-wrapper .file-path {
+height: 2.8rem; }
 
 .file-field.big-2 .file-path-wrapper {
-  height: 3.7rem; }
-  .file-field.big-2 .file-path-wrapper .file-path {
-    height: 3.5rem; }
+height: 3.7rem; }
+.file-field.big-2 .file-path-wrapper .file-path {
+height: 3.5rem; }
 
 
 a:link {text-decoration: none;}
@@ -24,17 +37,17 @@ a:active {text-decoration: none;}
 .bg-danger{color:#fff}
 .bg-primary {background-color: $primary-color !important;}
 section#about {padding: 10px;}
-section {
-    padding: 8rem 0;
-}
+section {padding: 8rem 0;}
+
+
 .parallex-bg-about {
-    color: $primary-color ;
-    font-size: 100%;
-    width: 100%;
-    height: auto;
-    padding: 50px;
-    position: relative;
-    background: asset-url('numbers-background.jpg') repeat fixed;
+  color: $primary-color ;
+  font-size: 100%;
+  width: 100%;
+  height: auto;
+  padding: 50px;
+  position: relative;
+  background: asset-url('numbers-background.jpg') repeat fixed;
 }
 header.masthead {
   padding-top: 10rem;
@@ -88,7 +101,7 @@ header.masthead p {
 .masthead hr {
   max-width: 50px;
   border-width: 3px;
-  border-color: #d39e00;
+  border-color: $primary-color;
 }
 
 .masthead hr.light {
