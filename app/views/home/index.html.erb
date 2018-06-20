@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container-fluid">
   <!-- Breadcrumbs-->
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -14,20 +14,24 @@
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#inbox">Inbox(0)</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#draft">Daft(0)</a>
+            <a class="nav-link" data-toggle="tab" href="#Sent">Sent(<%=@compose_messages_count %>)</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#draft">Sent(<%=@compose_messages_count %>)</a>
+            <a class="nav-link" data-toggle="tab" href="#delivery-reports">Delivery Report(0)</a>
           </li>
+
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
           <div class="tab-pane container active" id="inbox">...</div>
-          <div class="tab-pane container fade" id="draft">...</div>
-         <div class="tab-pane container fade" id="Sent">...</div>
+         <div class="tab-pane container fade" id="Sent">
+             <%=render'sentMessages'%>
+         </div>
+         <div class="tab-pane container fade" id="delivery-reports">...</div>
         </div>
 
      </div>
