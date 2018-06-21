@@ -8,7 +8,21 @@ body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat
 
 a{color: $primary-color;}
 a:hover{color: $secondary-color;}
-
+.page-item.active .page-link{
+    z-index: 1;
+    color: #fff;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+}
+.page-link{
+  color:$primary-color;
+}
+.page-link:hover{
+  color:$secondary-color;
+}
+.text-center{
+  text-align: center;
+}
 .btn-warning {
     color: #212529;
     background-color: $primary-color;

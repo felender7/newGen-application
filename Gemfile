@@ -21,6 +21,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem "font-awesome-rails"
+gem 'will_paginate-bootstrap4'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all.order('full_name ASC')
+    @contacts = Contact.all.order('full_name ASC').paginate(:page => params[:page], :per_page => 5)
     #@contacts = Contact.where('full_name LIKE ?', "a%").order(:full_name)
   end
 
