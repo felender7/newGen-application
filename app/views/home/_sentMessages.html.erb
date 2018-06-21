@@ -5,7 +5,7 @@
       <%if current_user && compose_message.user == current_user%>
         <tr>
           <td><%= compose_message.recipient %></td>
-          <td><span class="bg-danger btn-sm"><i class="fa fa-clock-o"></i>  <%= time_ago_in_words(compose_message.created_at)   %> ago </span></td>
+          <td><small><span class="text-muted"><i class="fa fa-clock-o"></i>  <%= time_ago_in_words(compose_message.created_at)   %> ago </span></small></td>
           <td><%= link_to compose_message do %><i class="fa fa-list" data-toggle="tooltip" title="View"></i><%end%></td>
           <td><%= link_to compose_message, method: :delete, data: { confirm: 'Are you sure?' }  do %> <i class="fa fa-trash-o" data-toggle="tooltip" title="Delete"></i><%end%></td>
         </tr>

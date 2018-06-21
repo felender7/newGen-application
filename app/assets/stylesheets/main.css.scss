@@ -3,8 +3,11 @@
 @import "font-awesome";
 
 $primary-color      :#f58435;
-$secondary-color    :#f58435;
+$secondary-color    :#6c757d;
 body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat;}
+
+a{color: $primary-color;}
+a:hover{color: $secondary-color;}
 
 .btn-warning {
     color: #212529;

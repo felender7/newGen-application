@@ -1,5 +1,8 @@
-<%= form_tag import_contacts_path, multipart: true do %>
-  <%= file_field_tag :file %> <hr>
-  <%= submit_tag'Import', class:"btn btn-warning btn-block" do %>
-  <% end %>
+
+<%= form_tag import_contacts_path, multipart: true, class:"was-validated" do %>
+<div class="custom-file">
+  <%= file_field_tag :file , class:"custom-file-input", required: :required%> <hr>
+  <label class="custom-file-label" for="file">Choose file...</label>
+  <%= submit_tag'Import', class:"btn btn-warning btn-block"  %>
+</div>
 <% end %>
