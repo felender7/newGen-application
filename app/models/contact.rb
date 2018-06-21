@@ -4,7 +4,7 @@ class Contact < ApplicationRecord
 
       def self.import(file, user)
         CSV.foreach(file.path, headers:true) do |row|
-        contact = find_by_id(row["id"]) || new
+        contact = find_by(id: row["id"]) || new
         contact.attributes = row.to_hash
         contact.user = user
         contact.save!
