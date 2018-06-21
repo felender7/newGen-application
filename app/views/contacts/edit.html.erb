@@ -1,16 +1,19 @@
 
 <div class="container-fluid">
-  <div class="shadow-none p-3 mb-5 bg-light roundedk">
-    <h3>Editing Contact</h3>
+  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <h4>Editing Contact</h4>
+    <span style="margin-top: -30px;" class="float-right"> <a href="/contacts"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a></span>
   </div>
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
     <%= render 'form', contact: @contact %>
     <hr>
-      <%= link_to @contact do  %>
+    <div class="btn-group">
+      <%= link_to @contact, class:"btn btn-sm btn-outline-primary" do  %>
         <i class="fa fa-list"></i>
-      <%end%> |
-      <%= link_to contacts_path do %>
+      <%end%>
+      <%= link_to contacts_path, class:"btn btn-sm btn-outline-primary" do %>
       <i class="fa fa-arrow-circle-left"></i>
     <%end%>
   </div>
+</div>
 </div>

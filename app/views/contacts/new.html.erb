@@ -1,39 +1,42 @@
-
 <div class="container-fluid">
-  <div class="shadow-none p-3 mb-5 bg-light roundedk">
-    <h3>Add New Contact</h3>
-  </div>
-  <div class="shadow-sm p-3 mb-5 bg-white rounded">
-    <%= render 'form', contact: @contact %>
-    <hr>
 
-    <h3>Import contact - CVS </h3>
-   <div class="form-group">
-      <form class="md-form">
-      <div class="file-field">
-          <div class="btn btn-primary btn-sm float-left">
-              <span>Choose file</span>
-              <input type="file">
-          </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
+   <ul class="nav nav-tabs" role="tablist">
+     <li class="nav-item"><a class="nav-link active" href="#home" data-toggle="tab"><i class="fa fa-plus-circle"></i> Add</a></li>
+     <li class="nav-item"><a class="nav-link" href="#sub" data-toggle="tab"><i class="fa fa-download"></i> Import</a></li>
+   </ul>
 
-    <div class="actions">
+   <div class="tab-content">
+     <div role="tabpanel" class="tab-pane active" id="home">
+       <br>
+       <div class="row">
+       <div class="container-fluid">
+         <div class="shadow-sm p-3 mb-5 bg-white rounded">
+           <h4>New Contact</h4>
+           <span style="margin-top: -30px;" class="float-right"> <a href="/contacts"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a></span>
+         </div>
+         <div class="shadow-sm p-3 mb-5 bg-white rounded">
+           <%= render 'form', contact: @contact %>
+         </div>
+       </div>
+       </div>
+     </div>
 
+     <div role="tabpanel" class="tab-pane" id="sub">
+       <br>
+       <div class="row">
+       <div class="container-fluid">
+         <div class="shadow-sm p-3 mb-5 bg-white rounded">
+           <h4>Import Contacts</h4>
+           <p>
+          Select a file on your computer that contains the data that you would like to import, or download the template to get a head start on creating the import file. <br>
+          <a href="http://www.sharecsv.com/dl/3da4a33b65766225b7331b2d957d2301/sample.csv">Download Import File Template </a></p>
+         </div>
 
-      <button class="btn btn-danger">
-        <i class="fa fa-save"></i> Save
-      </button>
-</form>
-<br>
-<br>
-<br>
-
-    <%= link_to contacts_path do %>
-    <i class="fa fa-2x fa-arrow-circle-left" data-toggle="tooltip" title="Back"></i>
-     <%end%>
-  </div>
+         <div class="shadow-sm p-3 mb-5 bg-white rounded">
+           <%= render 'import' %>
+         </div>
+       </div>
+       </div>
+     </div>
+   </div>
 </div>

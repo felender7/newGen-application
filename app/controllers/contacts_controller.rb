@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.all.order('full_name ASC')
+    #@contacts = Contact.where('full_name LIKE ?', "a%").order(:full_name)
   end
 
   # GET /contacts/1
@@ -15,6 +16,10 @@ class ContactsController < ApplicationController
   def show
   end
 
+  def import
+    Contact.import(params[:file], current_user)
+    redirect_to contacts_url, notice: 'Contact was successfully imported.'
+  end
   # GET /contacts/new
   def new
     @contact = current_user.contacts.build

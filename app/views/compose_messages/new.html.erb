@@ -3,9 +3,7 @@
     <h3>Compose New Message</h3>
 
   </div>
-  <%= link_to  compose_messages_path do %>
-    <i class="fa fa-fw fa-envelope-open"></i>Sent Message(s)
-  <%end%>
+
   <%= render 'form', compose_message: @compose_message %>
 
 </div>

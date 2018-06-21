@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users
-  resources :contacts
+  resources :contacts do
+    collection { post :import }
+  end
+
   resources :compose_messages
   get '/home', to:'home#index'
 
