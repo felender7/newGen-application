@@ -1,17 +1,9 @@
 <div class="container-fluid">
-  <div class="shadow-none p-3 mb-5 bg-light roundedk">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-            <h3>Sent Message</h3>
-        </div>
-        <div class="col-md-4">
-            <p class="float-right"> <a href="/home"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a></p>
-        </div>
-
-      </div>
-    </div>
+  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+    <h4>Sent SMS</h4>
+    <span style="margin-top: -30px;" class="float-right"> <a href="/compose_messages"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a></span>
   </div>
+
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
    <%if current_user && @compose_message.user == current_user%>
       <strong>To:</strong> | <%= @compose_message.recipient %>
@@ -21,7 +13,9 @@
     </p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-trash"></i> Delete</button>
+              <%= link_to @compose_message, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-sm btn-outline-secondary" do%>
+                <i class="fa fa-trash"></i> Delete
+              <%end%>
             </div>
             <small class="text-muted"><%=@compose_message.created_at.to_time.strftime("%m/%d/%y %I:%M:%S %p")%></small>
         </div>
