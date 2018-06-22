@@ -5,7 +5,9 @@
 $primary-color      :#f58435;
 $secondary-color    :#6c757d;
 body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat;}
+.text-justify{text-align: justify;}
 
+p.media-body{text-align: justify;}
 a{color: $primary-color;}
 a:hover{color: $secondary-color;}
 .page-item.active .page-link{
