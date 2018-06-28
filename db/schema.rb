@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180619113730) do
+ActiveRecord::Schema.define(version: 20180627112319) do
 
   create_table "compose_messages", force: :cascade do |t|
     t.string "recipient"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20180619113730) do
     t.datetime "updated_at", null: false
     t.string "full_name"
     t.integer "user_id"
+    t.string "group"
+    t.string "email"
+    t.string "avator"
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 

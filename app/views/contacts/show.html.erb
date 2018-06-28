@@ -3,22 +3,37 @@
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
     <h4>Saved Contact</h4>
     <span style="margin-top: -30px;" class="float-right"> <a href="/contacts"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a></span>
-
   </div>
 
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
-    <p>
-      <strong>Full name:</strong><br>
-      <%= @contact.full_name %>
-    </p>
+   <div class="row">
+     <div class="col-lg-4">
+       <%= image_tag(@contact.avatar_url ,class:"avatar" ) if @contact.avatar?  %>
 
-    <p>
-      <strong>Phone:</strong><br>
-      +<%= @contact.phone %>
-    </p>
+       <%=image_tag("img_avatar.png", class:"avatar card-img-top")%>
 
+     </div>
+     <div class="col-lg-4"> <p>
+         <strong>Full name:</strong><br>
+         <%= @contact.full_name %>
+       </p>
+
+       <p>
+         <strong>Phone:</strong><br>
+         +<%= @contact.phone %>
+       </p>
+
+       <p>
+         <strong>Email:</strong><br>
+         <%= @contact.email %>
+       </p>
+       <p>
+         <strong>Group:</strong><br>
+         <%= @contact.group %>
+       </p>
+     </div>
+   </div>
     <hr>
-
     <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
           <%= link_to edit_contact_path(@contact), class:"btn btn-sm btn-outline-secondary" do %>

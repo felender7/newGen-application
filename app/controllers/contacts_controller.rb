@@ -77,7 +77,7 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:full_name,  :phone)
+      params.require(:contact).permit(:full_name,  :phone, :email, :group, :avator)
     end
 
     def correct_user # check if the user is authorised to edit,update or destroy the pin

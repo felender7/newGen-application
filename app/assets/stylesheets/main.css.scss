@@ -5,7 +5,25 @@
 $primary-color      :#f58435;
 $secondary-color    :#6c757d;
 body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat;}
+
 .text-justify{text-align: justify;}
+.was-validated .form-control:invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .custom-select.is-invalid {
+    border-color: $primary-color;
+}
+.avatar {
+    vertical-align: middle;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.avatar-2 {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: -2px;
+}
 
 p.media-body{text-align: justify;}
 a{color: $primary-color;}

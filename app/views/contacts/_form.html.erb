@@ -1,4 +1,4 @@
-<%= form_with(model: contact, local: true) do |form| %>
+<%= form_with(model: contact, html: { multipart: true } , class:"was-validated",local: true) do |form| %>
   <% if contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -10,21 +10,53 @@
       </ul>
     </div>
   <% end %>
+ <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <%= form.label :full_name %>
+          <%= form.text_field :full_name, id: :contact_full_name, class:"form-control", placeholder:"John Doe", required: :required %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name, id: :contact_full_name, class:"form-control", placeholder:"John Doe" %>
+        <div class="form-group">
+          <%= form.label :phone %>
+          <%= form.text_field :phone, id: :contact_phone, class:"form-control", placeholder:"2771 000 0000" , maxlength: 11, required: :required %>
+        </div>
+
+
+
+    <div class="form-group">
+      <%= form.label :email %>
+      <%= form.email_field :email, id: :contact_email, class:"form-control", placeholder:"example@newgen.co.za", required: :required  %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :group %>
+      <%= form.select( :group, ["Friends","Family","Co-workers"], {prompt: "Select..."}, {class: "form-control"} ) %>
+    </div>
+    </div>
+
+
+       <div class="col-lg-6">
+         <label for="">Avator</label>
+          <div class="card mb-4 box-shadow">
+            <div class="card-body">
+                <%=image_tag("img_avatar.png", class:"avatar card-img-top")%>
+              <p class="card-text">
+                <div class="custom-file">
+                 <%=form.file_field :avator, class:"custom-file-input"%>
+                 <label class="custom-file-label" for="file">Choose file...</label>
+                </div>
+              </p>
+
+            </div>
+          </div>
+     </div>
   </div>
 
-  <div class="form-group">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :contact_phone, class:"form-control", placeholder:"2771 000 0000" , maxlength: 11 %>
-  </div>
+    <div class="actions">
+      <%= form.button class:"btn btn-outline-secondary", data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> Saving..."} do %>
+      <i class="fa fa-check-circle"></i></i> Save
+      <%end%>
+    </div>
 
-
-  <div class="actions">
-    <%= form.button class:"btn btn-outline-secondary", data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> Saving..."} do %>
-    <i class="fa fa-check-circle"></i></i> Save
-    <%end%>
-  </div>
 <% end %>
