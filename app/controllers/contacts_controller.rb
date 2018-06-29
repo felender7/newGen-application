@@ -3,12 +3,13 @@ class ContactsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :current_user_contacts, only:[:show]
+  before_action :counts, only:[:index]
+  before_action :contct_groups, only:[:index]
 
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all.paginate(:page => params[:page], :per_page => 5).order('full_name ASC')
-    #@contacts = Contact.where('full_name LIKE ?', "a%").order(:full_name)
+    @contacts = Contact.all.paginate(:page => params[:page], per_page: 20).order('full_name ASC')
   end
 
   # GET /contacts/1
@@ -90,5 +91,18 @@ class ContactsController < ApplicationController
       if user_signed_in?
        @contacts = current_user.contacts.order("created_at DESC")
       end
+    end
+
+    def counts
+      @contacts_counts = current_user.contacts.all.count
+      @contacts_count_friends = current_user.contacts.all.where(group: 'Friends').count
+      @contacts_count_family = current_user.contacts.all.where(group: 'Family').count
+      @contacts_count_co_workers = current_user.contacts.all.where(group: 'Co-workers').count
+    end
+
+    def contct_groups
+        @contacts_group_friends = Contact.where(group: 'Friends').all.order('full_name ASC')
+        @contacts_group_family = current_user.contacts.where(group: 'Family').all.order('full_name ASC')
+        @contacts_group_co_workers = Contact.where(group: 'Co-workers').all.order('full_name ASC')
     end
 end
