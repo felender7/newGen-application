@@ -10,6 +10,9 @@ footer{margin-bottom:  -50px;}
 .was-validated .form-control:invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .custom-select.is-invalid {
     border-color: $primary-color;
 }
+
+.my-icon {text-shadow: 0px 0px 3px $secondary-color;}
+.fa-border {margin-left: 5px;}
 .border-bt{border-top: 1px solid #e6ebef;}
 .List__Item[data-v-9de6ee4e] {
  height:64px;
