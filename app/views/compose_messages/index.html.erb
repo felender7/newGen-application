@@ -9,7 +9,7 @@
     <%= link_to 'Send SMS', new_compose_message_path, class:"btn btn-sm btn-outline-secondary" %>
     </div>
     <br>
-      <h6 class="border-bottom border-gray pb-2 mb-0">Recent messages</h6>
+      <h6 class="border-bottom border-gray pb-2 mb-0 text-muted">Recent messages</h6>
           <% @compose_messages.each do |compose_message| %>
             <%if current_user && compose_message.user == current_user%>
               <div class="media text-muted pt-3">

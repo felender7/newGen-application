@@ -12,15 +12,15 @@
        <!-- Nav tabs -->
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#inbox">Inbox <span class="badge badge-secondary badge-pill">1</span></a>
+          <a class="nav-link active" data-toggle="tab" href="#inbox">  <small> Inbox <span class="badge badge-secondary badge-pill">1</span></small></a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#Sent">Sent <span class="badge badge-secondary badge-pill"><%=@compose_messages_count %></span></a>
+             <a class="nav-link" data-toggle="tab" href="#Sent"><small>Sent <span class="badge badge-secondary badge-pill"><%=@compose_messages_count %></small></span></a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#delivery-reports">Delivery Report <span class="badge badge-secondary badge-pill">2</span></a>
+             <a class="nav-link" data-toggle="tab" href="#delivery-reports"><small>Delivery Report <span class="badge badge-secondary badge-pill">2</span></small></a>
           </li>
 
         </ul>
@@ -40,32 +40,17 @@
      <div class="col-md-6">
        <br>
        <hr>
-       <div class="btn-group">
-          <a href="users/edit" class="btn btn-sm btn-outline-secondary" > <i class="fa fa-cog"></i> Settings</a>
-          <a href="compose_messages" class="btn btn-sm btn-outline-secondary" > All messages <span class="badge badge-secondary badge-pill"><%=@compose_messages_count %></span></a>
-
-       </div>
-       <hr>
        <!-- Icon Cards-->
        <div class="row">
          <div class="col-xl-6 col-sm-6 mb-3">
            <a href="/compose_messages/new">
              <div class="card mb-4 box-shadow">
                <img class="card-img-top"  alt="Thumbnail [100%x225]" style="height: 180px; width: 100%; display: block;" src="https://preview.ibb.co/jYVTEo/phone.jpg" data-holder-rendered="true">
-               <div class="card-body">
-                 <p class="card-text">
-                      <h3><i class="fa fa-mobile"></i> SEND SMS</h3>
-                      <small> <i class="fa fa-angle-right"></i> Compose Message</small>
-                 </p>
-                 <hr>
-                 <div class="d-flex justify-content-between align-items-center">
-                   <div class="btn-group">
-                     <button type="button" class="btn btn-sm btn-outline-secondary"> <span class="badge badge-light">
-                       0 </span></button>
-                     <button type="button" class="btn btn-sm btn-outline-secondary">Message Recieved </button>
-                   </div>
-
-                 </div>
+              <div class="home-content shadow">
+               <p class="card-text">
+                    <h4><i class="fa fa-mobile"></i> SEND SMS</h4>
+                    <small> <i class="fa fa-angle-right"></i> Compose Message</small>
+               </p>
                </div>
              </div>
            </a>
@@ -75,22 +60,12 @@
          <a href="/contacts">
            <div class="card mb-4 box-shadow">
              <img class="card-img-top"  alt="Thumbnail [100%x225]" style="height: 180px; width: 100%; display: block;" src="https://image.ibb.co/i2SVS8/contacts.png" data-holder-rendered="true">
-             <div class="card-body">
+            <div class="home-content shadow">
                <p class="card-text">
-                    <h3><i class="fa fa-address-book"></i> CONTACTS</h3>
+                    <h4><i class="fa fa-address-book"></i> CONTACTS</h4>
                     <small> <i class="fa fa-angle-right"></i> Individuals|Groups</small> <br>
-
                </p>
-               <hr>
-               <div class="d-flex justify-content-between align-items-center">
-                 <div class="btn-group">
-                   <button type="button" class="btn btn-sm btn-outline-secondary"> <span class="badge badge-light">
-                     <%=pluralize(@contacts_count,'Contact' )%></span></button>
-                   <button type="button" class="btn btn-sm btn-outline-secondary">Saved</button>
-                 </div>
-
-               </div>
-             </div>
+            </div>
            </div>
          </a>
          </div>

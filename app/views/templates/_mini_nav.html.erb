@@ -1,0 +1,18 @@
+<%if user_signed_in?%>
+<div class="nav-scroller bg-white box-shadow">
+      <nav class="nav nav-underline">
+        <%=link_to home_path, class:"nav-link active text-muted" do %>
+        <i class="mdi mdi-view-dashboard"></i> Dashboard
+        <%end%>
+        <a class="nav-link" href="/compose_messages"> <i class="mdi mdi-message"></i> Messages
+          <span class="badge badge-pill bg-light align-text-bottom"><%=@compose_messages_count%></span>
+        </a>
+
+        <a class="nav-link" href="/compose_messages"> <i class="mdi mdi-book"></i> Contacts
+          <span class="badge badge-pill bg-light align-text-bottom"><%=@contacts_count%></span>
+        </a>
+        <a class="nav-link" href="users/edit"> <i class="mdi mdi-settings"></i> Settings</a>
+        <a class="nav-link" href="#"> <i class="mdi mdi-comment-alert"></i> Help</a>
+      </nav>
+</div>
+<%end%>
