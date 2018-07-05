@@ -5,11 +5,12 @@
 $primary-color      :#f58435;
 $secondary-color    :#6c757d;
 body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat;}
-
+footer{margin-bottom:  -50px;}
 .text-justify{text-align: justify;}
 .was-validated .form-control:invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .custom-select.is-invalid {
     border-color: $primary-color;
 }
+.border-bt{border-top: 1px solid #e6ebef;}
 .List__Item[data-v-9de6ee4e] {
  height:64px;
  display:-webkit-box;
@@ -150,10 +151,14 @@ body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
-    background-color: $primary-color;
+    background-color: $secondary-color;
     border-radius: 1px;
 }
 
+.nav-pills .nav-link a {
+    color: $secondary-color;
+
+}
 
 .avatar {
     vertical-align: middle;

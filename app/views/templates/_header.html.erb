@@ -8,30 +8,30 @@
     <ul class="navbar-nav ml-auto">
       <%if user_signed_in?%>
       <li class="nav-item active">
-        <a class="nav-link" href="/home"><i class="fa fa-home"></i> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/home"><i class="mdi mdi-home mdi-18px"></i> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link">|</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/compose_messages/new"><i class="fa fa-envelope-open"></i> </a>
+        <a class="nav-link" href="/compose_messages/new">  <i class="mdi mdi-message-draw mdi-18px" data-toggle="tooltip" title="Send SMS"></i> </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contacts/"><i class="fa fa-address-book"></i></a>
+        <a class="nav-link" href="/contacts/"><i class="mdi mdi-book mdi-18px" data-toggle="tooltip" title="Add Contacts"></i> </a>
       </li>
 
       <%end%>
 
       <li class="nav-item">
   <%if user_signed_in?%>
-        <%=link_to destroy_user_session_path, method: :delete, class:"nav-link"  do %>
-        <i class="fa fa-fw fa-sign-out"></i>Logout
+        <%=link_to destroy_user_session_path, method: :delete, class:"nav-link"   do %>
+        <i class="mdi mdi-exit-to-app mdi-18px"></i> Logout
       <%end%>
        </li>
 
        <%if current_user.admin == true %>
        <li class="nav-item">
-         <a class=" nav-link btn btn-outline-warning my-2 my-sm-0" href="/admin"><i class="fa fa-unlock-alt" aria-hidden="true"></i></i> admin</a>
+         <a class=" nav-link btn btn-outline-warning my-2 my-sm-0" href="/admin"> <i class="mdi mdi-account-key"></i> admin</a>
        </li>
        <%end%>
 

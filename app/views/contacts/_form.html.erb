@@ -11,40 +11,48 @@
     </div>
   <% end %>
  <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-8">
+       <div class="card" style="height:100%">
+         <div class="card-body">
           <div class="form-group">
-            <%= form.label :first_name %>
-            <%= form.text_field :first_name, id: :contact_first_name, class:"form-control", placeholder:"John", required: :required %>
+            <div class="form-row">
+              <div class="col-md-6">
+              <%= form.label :first_name %>
+              <%= form.text_field :first_name, id: :contact_first_name, class:"form-control", placeholder:"John", required: :required %>
+              </div>
+              <div class="col-md-6">
+              <%= form.label :last_name %>
+              <%= form.text_field :last_name, id: :contact_last_name, class:"form-control", placeholder:"Doe", required: :required %>
+            </div>
           </div>
-          <div class="form-group">
-            <%= form.label :last_name %>
-            <%= form.text_field :last_name, id: :contact_last_name, class:"form-control", placeholder:"Doe", required: :required %>
           </div>
 
 
-        <div class="form-group">
-          <%= form.label :phone %>
-          <%= form.text_field :phone, id: :contact_phone, class:"form-control", placeholder:"2771 000 0000" , maxlength: 11, required: :required %>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-6">
+            <%= form.label :phone %>
+            <%= form.text_field :phone, id: :contact_phone, class:"form-control", placeholder:"2771 000 0000" , maxlength: 11, required: :required %>
+          </div>
+          <div class="col-md-6">
+          <%= form.label :email %>
+          <%= form.email_field :email, id: :contact_email, class:"form-control", placeholder:"example@newgen.co.za", required: :required  %>
         </div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :group %>
+        <%= form.select( :group, ["Friends","Family","Co-workers"], {prompt: "Select..."}, {class: "form-control"} ) %>
+      </div>
+  </div>
+</div>
+</div>
 
 
-
-    <div class="form-group">
-      <%= form.label :email %>
-      <%= form.email_field :email, id: :contact_email, class:"form-control", placeholder:"example@newgen.co.za", required: :required  %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :group %>
-      <%= form.select( :group, ["Friends","Family","Co-workers"], {prompt: "Select..."}, {class: "form-control"} ) %>
-    </div>
-    </div>
-
-
-       <div class="col-lg-6">
-         <label for="">Avator</label>
-          <div class="card mb-4 box-shadow">
-            <div class="card-body">
+       <div class="col-lg-4">
+          <div class="card" style="height:100%">
+            <div class="card-body text-center">
                 <%=image_tag("img_avatar.png", class:"avatar card-img-top")%>
               <p class="card-text">
                 <div class="custom-file">
@@ -52,16 +60,17 @@
                  <label class="custom-file-label" for="file">Choose file...</label>
                 </div>
               </p>
+              <hr>
 
+              <div class="form-group">
+                <%= form.button class:"btn btn-outline-secondary ", data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> Saving..."} do %>
+                <i class="fa fa-check-circle"></i></i> Save
+                <%end%>
+              </div>
             </div>
           </div>
      </div>
   </div>
 
-    <div class="actions">
-      <%= form.button class:"btn btn-outline-secondary", data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> Saving..."} do %>
-      <i class="fa fa-check-circle"></i></i> Save
-      <%end%>
-    </div>
 
 <% end %>

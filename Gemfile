@@ -21,6 +21,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem "font-awesome-rails"
+gem 'material_design_icons'
 gem 'will_paginate-bootstrap4'
 gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.3'
