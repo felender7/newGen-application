@@ -13,7 +13,7 @@
     <% end %>
 
     <div class="form-group">
-      <%= form.collection_select :recipient, current_user.contacts, :full_name , :full_name , {prompt: "Select a Recipient"}, {class: "form-control"}  %>
+      <%= form.collection_select :recipient, current_user.contacts, :first_name_with_last_name_and_phone , :first_name_with_last_name_and_phone , {prompt: "Select a Recipient"}, {class: "form-control"}  %>
     <hr>
     <div class="form-group form-check">
        <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -24,7 +24,7 @@
 
       <%= form.text_area :message, id: :compose_message_message, class:"form-control", placeholder:"message", maxlength: 1025 %>
     </div>
-      <p class="text-muted pull-right"><small>Max Characters : 918</small></p>
+      <p class="text-muted pull-right"><small>Max: 160 characters</small></p>
     <div class="form-group">
       <%= form.button class:"btn btn-sm btn-outline-secondary", data:{disable_with:"<i class='fa fa-spinner fa-spin'></i> Sending please wait..."} do %>
         Send Message

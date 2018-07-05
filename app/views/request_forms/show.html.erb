@@ -1,24 +1,17 @@
+<div class="container">
+    <div class="card">
+      <div class="card-body text-center">
 
-<p>
-<strong>First name:</strong>
-<%= @request_form.first_name %>
-</p>
+        <h3>Hi
+         <%= @request_form.first_name %> <%= @request_form.last_name %> ,  </h3> your request has been submitted!
+          login details will be to <br><strong> <%= @request_form.email %> </strong>
+          <hr>
+          <br><small><i>We'll be in touch</i></small>
 
-<p>
-<strong>Last name:</strong>
-<%= @request_form.last_name %>
-</p>
-
-<p>
-<strong>Phone:</strong>
-<%= @request_form.phone %>
-</p>
-
-<p>
-<strong>Email:</strong>
-<%= @request_form.email %>
-</p>
-<%if user_signed_in?%>
-<%= link_to 'Edit', edit_request_form_path(@request_form) %> |
-<%= link_to 'Back', request_forms_path %>
-<%end%>
+        <%if user_signed_in? && current_user.admin == true %>
+        <%= link_to 'Edit', edit_request_form_path(@request_form) %> |
+        <%= link_to 'Back', request_forms_path %>
+        <%end%>
+      </div>
+    </div>
+</div>

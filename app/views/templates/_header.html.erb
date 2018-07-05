@@ -14,27 +14,33 @@
         <a class="nav-link">|</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/compose_messages/new"><i class="fa fa-envelope-open"></i></a>
+        <a class="nav-link" href="/compose_messages/new"><i class="fa fa-envelope-open"></i> </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contacts/"><i class="fa fa-address-book"></i> </a>
+        <a class="nav-link" href="/contacts/"><i class="fa fa-address-book"></i></a>
       </li>
+
       <%end%>
 
       <li class="nav-item">
   <%if user_signed_in?%>
-    <%=link_to destroy_user_session_path, method: :delete, class:"nav-link"  do %>
-    <i class="fa fa-fw fa-sign-out"></i>Logout
-  <%end%>
-   </li>
+        <%=link_to destroy_user_session_path, method: :delete, class:"nav-link"  do %>
+        <i class="fa fa-fw fa-sign-out"></i>Logout
+      <%end%>
+       </li>
+
+       <%if current_user.admin == true %>
+       <li class="nav-item">
+         <a class=" nav-link btn btn-outline-warning my-2 my-sm-0" href="/admin"><i class="fa fa-unlock-alt" aria-hidden="true"></i></i> admin</a>
+       </li>
+       <%end%>
+
     <%else%>
 
   <li class="nav-item">
       <%=link_to new_user_session_path, class:"nav-link btn btn-outline-warning my-2 my-sm-0" do   %>
         <i class="fa fa-fw fa-sign-out"></i>Sign in
     <%end%>
-
-
     <%end%>
 </li>
     </ul>

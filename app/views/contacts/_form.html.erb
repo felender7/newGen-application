@@ -12,10 +12,15 @@
   <% end %>
  <div class="row">
       <div class="col-lg-6">
-        <div class="form-group">
-          <%= form.label :full_name %>
-          <%= form.text_field :full_name, id: :contact_full_name, class:"form-control", placeholder:"John Doe", required: :required %>
-        </div>
+          <div class="form-group">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name, id: :contact_first_name, class:"form-control", placeholder:"John", required: :required %>
+          </div>
+          <div class="form-group">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name, id: :contact_last_name, class:"form-control", placeholder:"Doe", required: :required %>
+          </div>
+
 
         <div class="form-group">
           <%= form.label :phone %>
@@ -43,7 +48,7 @@
                 <%=image_tag("img_avatar.png", class:"avatar card-img-top")%>
               <p class="card-text">
                 <div class="custom-file">
-                 <%=form.file_field :avator, class:"custom-file-input"%>
+                 <%=form.file_field :image, class:"custom-file-input"%>
                  <label class="custom-file-label" for="file">Choose file...</label>
                 </div>
               </p>

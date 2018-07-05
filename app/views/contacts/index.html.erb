@@ -18,7 +18,7 @@
      <div class="col-md-2">
        <div class="card">
            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-             <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">All <span class="badge badge-secondary pull-right"><%= @contacts_counts%></span></a>
+             <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">All contacts <span class="badge badge-secondary pull-right"><%= @contacts_counts%></span></a>
              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Friends <span class="badge badge-secondary pull-right"><%= @contacts_count_friends%></span>  </a>
              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Family <span class="badge badge-secondary pull-right"><%= @contacts_count_family%></span></a>
              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Co-workers <span class="badge badge-secondary pull-right"><%= @contacts_count_co_workers%></span></a>
@@ -29,18 +29,18 @@
  <div class="col-md-10">
      <div class="tab-content" id="v-pills-tabContent">
        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <%=render'contacts/all'%>
+          <%=render'contacts/shared/all'%>
 
        </div>
        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-         <%=render'contacts/friends'%>
+         <%=render'contacts/shared/friends'%>
 
        </div>
        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-         <%=render'contacts/family'%>
+         <%=render'contacts/shared/family'%>
        </div>
        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-         <%=render'contacts/co_workers'%>
+         <%=render'contacts/shared/co_workers'%>
 
        </div>
      </div>
@@ -70,7 +70,7 @@
          <a href="http://www.sharecsv.com/dl/3da4a33b65766225b7331b2d957d2301/sample.csv">Download Import File Template </a></p>
 </p>
        </small>
-       <%=render'import'%>
+       <%=render'contacts/shared/import'%>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

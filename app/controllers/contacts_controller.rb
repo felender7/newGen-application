@@ -78,7 +78,7 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:full_name,  :phone, :email, :group, :avator)
+      params.require(:contact).permit(:first_name, :last_name,  :phone, :email, :group, :image)
     end
 
     def correct_user # check if the user is authorised to edit,update or destroy the pin
@@ -104,5 +104,9 @@ class ContactsController < ApplicationController
         @contacts_group_friends = Contact.where(group: 'Friends').all.order('full_name ASC')
         @contacts_group_family = current_user.contacts.where(group: 'Family').all.order('full_name ASC')
         @contacts_group_co_workers = Contact.where(group: 'Co-workers').all.order('full_name ASC')
+    end
+
+    def facility_name_with_facility_address
+   "#{first_name} | #{last_name}"
     end
 end

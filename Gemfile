@@ -24,6 +24,7 @@ gem "font-awesome-rails"
 gem 'will_paginate-bootstrap4'
 gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.3'
+gem 'rails_admin', '~> 1.3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
