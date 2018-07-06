@@ -53,7 +53,9 @@
        <div class="col-lg-4">
           <div class="card" style="height:100%">
             <div class="card-body text-center">
-                <%=image_tag("img_avatar.png", class:"avatar card-img-top")%>
+              <div class="avatar-circle">
+                 <span class="initials"> <%= 'ed'[0..1].upcase %></span>
+              </div>
               <p class="card-text">
                 <div class="custom-file">
                  <%=form.file_field :image, class:"custom-file-input"%>

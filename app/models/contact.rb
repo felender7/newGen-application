@@ -5,6 +5,8 @@ class Contact < ApplicationRecord
     before_save :downcase_fields
     mount_uploader :image, ImageUploader
 
+
+
     def titleize_fields
       self.first_name = first_name.titleize
       self.last_name = last_name.titleize
