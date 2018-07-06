@@ -5,11 +5,12 @@
 $primary-color      :#f58435;
 $secondary-color    :#6c757d;
 body{background: #f3f3f3 asset-url('globe-background.png') bottom left no-repeat;}
-footer{margin-bottom:  -50px;}
+
 .text-justify{text-align: justify;}
-.was-validated .form-control:invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .custom-select.is-invalid {
-    border-color: $primary-color;
-}
+.logo-width{width: 200px}
+.was-validated .form-control:invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .custom-select.is-invalid {border-color: $primary-color;}
+
+
 
 .avatar-circle {
   width: 100px;
