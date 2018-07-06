@@ -8,14 +8,13 @@
 
       <tr>
         <td>
-        <%if contact.image? %>
-        <%= image_tag(contact.image_url ,class:"avatar-circle-2" ) if contact.image?  %>
-        <%else%>
-        <div class="avatar-circle-2">
-           <span class="initials-2"> <%= contact.first_name[0..1].upcase %></span>
-        </div>
-
-        <%end%>
+          <%if contact.image? %>
+            <%= image_tag(contact.image_url ,class:"avatar-circle-2" ) if contact.image?  %>
+              <%else%>
+            <div class="avatar-circle-2">
+               <span class="initials-2"> <%= contact.first_name[0..1].upcase %></span>
+            </div>
+          <%end%>
         </td>
         <td style="width:50%"><span><%= contact.first_name %> <%= contact.last_name %></span><br>
           <small class="text-muted">
